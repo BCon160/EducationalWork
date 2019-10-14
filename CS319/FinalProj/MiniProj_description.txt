@@ -1,0 +1,45 @@
+Name:	Brendan Connolly
+ID:	12370346
+Date:	19/4/15
+Graph: 	Random k-regular graph
+Task:	Finding the Node with the highest "closeness" value
+
+My Graph Generating Algorithm:
+
+My algorithm works by first generating an edge set then transcribing that edge set onto an adjacency matrix
+This was a necessity because working directly with an adjacency matrix proved more difficult than I first conceived.
+So, the algorithm, let N=The number of Nodes and k=The number of neighbours for each node.
+First I generate a vector(pointsVec) with k copies of each of the N nodes(ie k copies of 1, k copies of 2, ..., k copies of N)
+Then I create two more vectors, the first(vec1) will store the start node of an edge, the second(vec2) will store the respective end node.
+EX: If the ith entry in vec1 is 3 and the ith entry in vec2 is 7, then there will be an edge from 3 to 7 in the graph
+To fill vec1 I just proceed linearly through pointsVec transcribing a node only if it has not been already used
+After an entry has been placed in vec1, I randomly pick some element in pointsVec and transcribe it into vec2 to get a random edge
+Once all points in pointsVec have been used, transcribe into the adjacency matrix
+
+Notes: 	1. When I randomly pick an element to go into vec2 I perform checks to see that the added edge doesn't form a self edge or a parallel edge.
+	2. If you are unlucky(more likely the higher k you choose) you will be forced to choose an invalid edge towards the end of the algorithm. 
+	   If this happens the program will throw out the graph that has been generated and start from scratch
+	3. I perform a check at the start of the algorithm to make sure that N*k is divisible by 2, otherwise no k-regular graph exists.
+	4. This algorithm will produce graphs of up to 10,000 nodes provided k is kept small (roughly k<13 for N=10,000), this should work in less than 100 seconds.
+	   For k=12 and N=10,000 this will produce 60,000 edges# 
+	5. NB:The graph will generate in <100 seconds but writing to an output file takes considerably longer. In order to get a fullygraph with both gephi
+	   normal CSV format in <100 seconds, only use N=3000.
+	6. For N=100 you can use any k between 2 and N/2 and the algorithm should work within 100 seconds in the worst case.
+	7. Be careful not to interupt the program as it writes to the CSV files as this will cause errors later on due to incomplete aadajacency matrix files.
+		
+My Task implementation:
+
+My algorithm works by first calculating the shortest distance between all pairs of nodes.
+It achives this by multiplying the adjacency matrix with carfully prepared vectors described in the code.
+The number of times we multiply the matrix with the vector signifys how many steps we have taken and thus gives us the shortest path.
+It then computes the farness of node i by summing all of the shortest distances between node i and each other node.
+The closeness is 1/farness.
+I then find the maximum closeness value of all the nodes.
+For a full description of how I find the shortest distance between all of the pairs of nodes please see comments in code.
+
+Notes:	1. This algorithm works for N=100 nodes instantly.
+	2. In <100 seconds the highest order graph this code will work for is roughly N=4000.
+	3. The shortest path algoritm has two efficiancy enhancing improvements:
+		(i) For each node i, it runs until it has found N-i paths(max number of shortest paths, not yet found, for node i cosidering the shortest path 
+		    matrix is symmetric), at which point it moves on to the next node.
+		(ii) Again, because the shortest path matrix is symmetric, I never look for the shortest path from i to j if j<i because I will already know it. 

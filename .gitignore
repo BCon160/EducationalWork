@@ -1,0 +1,11 @@
+#Exclude executables as this code is for show only
+*.exe
+*.o
+#Code blocks specific files
+*.cbp
+*.depend
+*.layout
+#Submission files
+*.zip
+#Exclude all backup files
+*~
