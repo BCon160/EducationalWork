@@ -1,0 +1,33 @@
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Your Veggie Database</h1>
+
+<% @vegetables.each do |vegetable| %>
+  <div class="entry">
+    <%= image_tag(vegetable.image_url) %>
+    <h3><%= vegetable.name %></h3>
+	<b>Growing Instructions:</b><%= sanitize vegetable.instructions %>
+	<b>Useful Info:</b><%= sanitize vegetable.description %>
+    <b>Tips:</b><%= sanitize vegetable.tips %>
+	<% if  vegetable.extra_tips.count != 0 %>
+		<b>Users Tips:</b>
+		<div class = 'hidden'>
+			<%= @extra_tips = vegetable.extra_tips.map{ |x| [x.tip, x.accepted, x.name] } %>
+		</div>
+		<br/>
+		<% @extra_tips.each do |extra_tip| %>
+			<% if extra_tip[1] == "true" %>
+				<%= extra_tip[2] %> said: <%= extra_tip[0] %><br/>
+			<% end %>
+		<% end %>
+		<br/>
+	<% end %>
+    <div class="rating_line">
+		<%= button_to 'Add to Allotment', line_items_path(vegetable_id: vegetable) %><br/>
+		<span class="rating"><b>Easiness To Grow Rating: </b><%= vegetable.easiness_to_grow_rating %></span>
+    </div>
+	<hr>
+  </div>
+<% end %>

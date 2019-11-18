@@ -1,0 +1,30 @@
+// Place all the styles related to the garden controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+    text-align: center;
+}
+
+h3 {
+	font-size: large;
+    text-align: center;
+}
+
+.entry {
+	margin-left: 150px;
+    margin-right: 150px;
+    img {
+        display: block;
+        margin: auto;
+    }
+    p {
+		display: block;
+        text-align: center;
+    }
+}
+
+.hidden {
+	opacity: 0;
+	height: 0px;
+	width: 0px;
+}

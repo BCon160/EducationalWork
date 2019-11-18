@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VegPatch</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id='navbar'>
+		<ul>
+			<li class='navlink'><a href="http://localhost:3000">Home</a></li>
+			<% if session[:allotment_id] %>
+				<li class='navlink'><%= link_to 'My Allotment', allotment_path(@cur_allotment) %></li>
+			<% end %>
+			<li class='navlink'><%= link_to 'Add a Tip', new_extra_tip_path %></li>
+			<li class='navlink'><a href="http://localhost:3000/static_pages/about">About</a></li>
+			<li class='navlink'><a href="http://localhost:3000/static_pages/contact">Contact us!</a></li>
+			<% if session[:user_id] %>
+				<li class='navlink'><%= link_to 'Admin Page', admin_path %><br /></li>
+				<%= button_to 'Admin Logout', logout_path, :method => :delete, class: "navbutton" %>
+			<% else %>
+				<%= button_to 'Admin Login', login_path, :method => :get, class: "navbutton" %>
+			<% end %>
+		</ul>
+	</div>
+	<%= content_tag :body, class: controller.controller_name do %>
+		<div class='rightSide'>
+			<%= image_tag("vegImgRightV3") %>
+		</div>
+		<div class='leftSide'>
+			<%= image_tag("vegImgLeftV3") %>
+		</div>
+		<div class='pageContent'>
+			<%= yield %>
+		</div>
+	<% end %>
+</body>
+</html>

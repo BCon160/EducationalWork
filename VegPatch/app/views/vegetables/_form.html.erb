@@ -1,0 +1,41 @@
+<%= form_for(@vegetable) do |f| %>
+  <% if @vegetable.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vegetable.errors.count, "error") %> prohibited this vegetable from being saved:</h2>
+
+      <ul>
+      <% @vegetable.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :instructions %><br>
+    <%= f.text_area :instructions, rows: 8 %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, rows: 8 %>
+  </div>
+  <div class="field">
+    <%= f.label :tips %><br>
+    <%= f.text_area :tips, rows: 8 %>
+  </div>
+  <div class="field">
+    <%= f.label :easiness_to_grow_rating %><br>
+    <%= f.text_field :easiness_to_grow_rating %>
+  </div>
+  <div class="field">
+    <%= f.label :image_url %><br>
+    <%= f.text_field :image_url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

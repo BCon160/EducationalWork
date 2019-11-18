@@ -1,0 +1,11 @@
+<h1>Welcome</h1>
+It's <%= Time.now %>.
+We currently have <%= pluralize(@total_tips, "tip") %>.
+
+<h2>Where do you want to go?</h2>
+<ul id='adminlinks'>
+<li><%= link_to 'Tips To Be Added',   extra_tips_path   %></li>
+<li><%= link_to 'Vegetables', vegetables_path %></li>
+<li><%= link_to 'Users',    users_path    %></li>
+<li><%= link_to 'Allotments', allotments_path %></li>
+</ul>

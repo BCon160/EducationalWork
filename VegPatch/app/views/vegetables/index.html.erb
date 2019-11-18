@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Vegetables</h1>
+
+<table>
+
+  <tbody>
+    <% @vegetables.each do |vegetable| %>
+		<%= content_tag :tr, class: cycle('list_line_odd', 'list_line_even') do %>
+			<td>
+				<%= image_tag(vegetable.image_url, class: 'list_image') %>
+			</td>
+			<td class='list_description'>
+				<dl>
+					<dt><%= vegetable.name %></dt>
+					<dd>
+						<%= truncate strip_tags(vegetable.instructions), length: 150 %>
+					</dd>
+				</dl>
+			</td>
+			<td class='list_description'>
+				<dl>
+					<dd>
+						<%= truncate strip_tags(vegetable.description), length: 150 %>
+					</dd>
+				</dl>
+			</td>
+			<td class='list_description'>
+				<dl>
+					<dd>
+						<%= truncate strip_tags(vegetable.tips), length: 150 %>
+					</dd>
+				</dl>
+			</td>
+			<td>
+				<dt>Easiness to Grow Rating</dt>
+					<dd>
+						<%= vegetable.easiness_to_grow_rating %>/10
+					</dd>
+				</dt>
+			</td>
+			<td class='list_actions'>
+				<%= link_to 'Show', vegetable %>
+				<%= link_to 'Edit', edit_vegetable_path(vegetable) %>
+				<%= link_to 'Destroy', vegetable, method: :delete, 
+				data: { confirm: 'Are you sure?' } %>
+			</td>
+		<% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vegetable', new_vegetable_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @extra_tip.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @extra_tip.email %>
+</p>
+
+<p>
+  <strong>Tip:</strong>
+  <%= @extra_tip.tip %>
+</p>
+
+<p>
+  <strong>Vegetable:</strong>
+  <%= @extra_tip.vegetable %>
+</p>
+
+<p>
+  <strong>Accepted?:</strong>
+  <%= @extra_tip.accepted %>
+</p>
+
+<%= link_to 'Edit', edit_extra_tip_path(@extra_tip) %> |
+<%= link_to 'Back', extra_tips_path %>

@@ -1,0 +1,130 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+body {
+    background-color: #D6FFFF;
+}
+
+ #navbar {
+    margin-left: 120px;
+    margin-right: 120px;
+	background-color: #FFFF19;
+    border-left: solid;
+	padding: 30px;
+    border-left-width: 10px;
+    border-top: solid;
+    border-top-width: 10px;
+    border-color: #0099CC;
+	border-radius: 20px;
+ }
+
+.navlink {
+	margin: 20px;
+    display: inline;
+    font-size: auto;
+    font-family: sans-serif;
+    text-decoration: none;
+    background-color: #66FF33;
+    border-color: black;
+	padding: 10px;
+	border-radius: 5px 50px 5px;
+}
+
+.navbutton{
+	margin-top: 20px;
+}
+
+div.rightSide{
+	position: absolute;
+	width: 107px;
+	height: 100vh;
+	top: 0px;
+	right: 8px;
+}
+
+div.leftSide{
+	position: absolute;
+	width: 107px;
+	height: 100vh;
+	top: 0px;
+	left: 8px;
+}
+
+div.rightSide img {
+	border-radius: 20px;
+    height: 97%;
+	margin-top: 1%;
+	margin-bottom: 2%;
+    right: 8px;
+    position: fixed;
+}
+
+div.leftSide img {
+	border-radius: 20px;
+    height: 97%;
+	margin-top: 1%;
+	margin-bottom: 2%;
+    left: 8px;
+    position: fixed;
+}
+
+div.rating_line {
+    text-align: center;
+}
+
+.vegP_form {
+  margin-left: 300px;
+  margin-right: 300px;
+  
+  fieldset {
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+    background: #66ff33;
+	border-radius: 10px;
+
+    legend {
+      color: #dfd;
+      background: #ff1a1a;
+      font-family: sans-serif;
+      padding: 0.2em 1em;
+	  border-radius: 10px;
+    }
+  }
+
+  form {
+    label {
+      width: 3em;
+      float: left;
+      text-align: right;
+      padding-top: 0.2em;
+      margin-right: 0.1em;
+      display: block;
+    }
+
+    select, textarea, input {
+      margin-left: 0.5em;
+    }
+
+    .submit {
+      margin-left: 4em;
+    }
+
+    br {
+      display: none;
+    }
+  }
+}

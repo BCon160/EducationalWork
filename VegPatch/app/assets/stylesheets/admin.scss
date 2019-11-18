@@ -1,0 +1,18 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+	text-align: center;
+}
+
+#adminlinks{
+	list-style: none;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 0px;
+	li{
+	font-size: large;
+	}
+}
+

@@ -1,0 +1,8 @@
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+
+<h2>Your Allotment</h2>
+<table class=allotTable>
+	<%= render @allotment.line_items %>
+</table>

@@ -1,0 +1,22 @@
+== VegPatch README
+
+This is VegPatch, an on-line database of common vegetables that can be grown in your
+back-yard.  
+
+So far I have created a "garden" page where users can browse
+through all of the vegetables I have added(not an extensive list so far) and I
+have created a rudimentary "allotment" page.  The allotment page is
+a place where users can keep a record of what they have grown.
+
+The information that you can obtain on this site includes:
+* Name of vegetable
+* A picture of a healthy specimen of that vegetable
+* Instructions on how/when to plant them
+* A description of taste, health benefits and/or aesthetic quality of the plants
+* A list of handy tips to make sure inexperienced gardeners don't get caught out
+* An easiness to grow rating which gives beginner gardeners an idea of what to grow while they get used to vegetable gardening
+
+I plan to improve the allotment mechanics so that a user can have many allotments
+(one for each year).  I also hope to implement a system by which a user
+can suggest gardening tips of their own and, after a screening process, have
+their tips added to the tips section of a particular vegetable.

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Allotments</h1>
+
+<table class='allotmentList'>
+  <tbody>
+    <% @all_allotments.each do |allotment| %>
+      <tr>
+	    <td><%= allotment.id %></td>
+        <td><%= link_to 'Show', allotment %></td>
+        <td><%= link_to 'Edit', edit_allotment_path(allotment) %></td>
+        <td><%= link_to 'Destroy', allotment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Allotment', new_allotment_path %>
