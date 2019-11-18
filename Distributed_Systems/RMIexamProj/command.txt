@@ -1,0 +1,3 @@
+java -cp C:\JavaProgs\Assignment1-CT414\rmi-assignment1 -Djava.rmi.codebase=file:C:\JavaProgs\Assignment1-CT414\rmi-assignment1\ -Djava.rmi.server.hostname=localhost -Djava.security.policy=server.policy ct414.ExamEngine
+
+java -cp C:\JavaProgs\Assignment1-CT414\rmi-assignment1 -Djava.rmi.codebase=file:C:\JavaProgs\Assignment1-CT414\rmi-assignment1\ -Djava.security.policy=server.policy ct414.clientApp localhost 123 pass
