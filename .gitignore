@@ -7,5 +7,5 @@
 *.layout
 #Submission files
 *.zip
-#Exclude all backup files
+#Backup files
 *~
