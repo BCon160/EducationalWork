@@ -1,0 +1,4 @@
+This project shows the benefit of MapReduce operations in quickly processing large amounts of data.  Most of the code was not written by me personally rather it was edited slightly from it's original form.
+Notes:
+ -> Original form of code can be seen at org/mapreduce/MapReduce.java.  Our edited version can be found as org/mapreduce/MapReduceEdited.java
+ -> This was a group project undertaken with a fellow student so I can't take full credit for it 
