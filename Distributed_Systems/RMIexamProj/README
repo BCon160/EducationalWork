@@ -1,0 +1,4 @@
+This project implements an exam server.  The client logs in and connects to the exam server via RMI and can then take tests, get their results etc..
+Notes:
+ -> All information is hardcoded as setting up a database was not part of the excersize
+ -> Usernames/Passwords are hard-coded in plain text.  This is obviously something I would never do in practice.  Security is not the focus of this project...
